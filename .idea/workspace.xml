@@ -4,13 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c53572b-25f9-4c36-bd5c-91325632fabb" name="Changes" comment="initial commit">
-      <change beforePath="$PROJECT_DIR$/.idea/SellCarrApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/.idea/SellCarApp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/resources/application.properties" afterDir="false" />
+    <list default="true" id="2c53572b-25f9-4c36-bd5c-91325632fabb" name="Changes" comment="Setting up the frontend">
+      <change afterPath="$PROJECT_DIR$/SellCar_backend/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SellCar_backend/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SellCar_backend/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sellCar_angular/.vscode/extensions.json" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/.vscode/extensions.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sellCar_angular/.vscode/launch.json" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/.vscode/launch.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sellCar_angular/.vscode/tasks.json" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/.vscode/tasks.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sellCar_angular/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sellCar_angular/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sellCar_angular/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/app.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/app.routes.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +44,9 @@
     &quot;accountId&quot;: &quot;96a0a3d7-a1ec-4107-b35e-04d8e2c4965e&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -48,6 +58,10 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.SellCarSpringApplication.executor": "Run",
     "git-widget-placeholder": "main",
@@ -59,11 +73,13 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.lookFeel",
+    "ts.external.directory.path": "C:\\Users\\puica\\Desktop\\WEB\\SellCarrApp\\sellCar_angular\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\puica\Desktop\WEB\SellCarrApp\sellCar_angular\src\app\modules\admin\components" />
       <recent name="C:\Users\puica\Desktop\WEB\SellCarrApp\SellCar_backend" />
       <recent name="C:\Users\puica\Desktop\WEB\SellCarrApp" />
     </key>
@@ -104,7 +120,7 @@
       <option name="presentableId" value="Default" />
       <updated>1748262391342</updated>
       <workItem from="1748262393519" duration="125000" />
-      <workItem from="1753802665365" duration="3110000" />
+      <workItem from="1753802665365" duration="6276000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -122,7 +138,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753803499022</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Setting up the frontend">
+      <option name="closed" value="true" />
+      <created>1753806158101</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1753806158101</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,6 +165,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="Setting up the frontend" />
+    <option name="LAST_COMMIT_MESSAGE" value="Setting up the frontend" />
   </component>
 </project>
