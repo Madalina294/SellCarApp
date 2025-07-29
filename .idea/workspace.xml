@@ -5,15 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c53572b-25f9-4c36-bd5c-91325632fabb" name="Changes" comment="initial commit">
-      <change beforePath="$PROJECT_DIR$/SellCar_Spring/SellCar_Spring/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/.gitattributes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellCar_Spring/SellCar_Spring/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellCar_Spring/SellCar_Spring/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellCar_Spring/SellCar_Spring/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellCar_Spring/SellCar_Spring/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellCar_Spring/SellCar_Spring/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellCar_Spring/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/SellCarSpringApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/SellCarSpringApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellCar_Spring/SellCar_Spring/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellCar_Spring/SellCar_Spring/src/test/java/com/carApp/SellCar_Spring/SellCarSpringApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/test/java/com/carApp/SellCar_Spring/SellCarSpringApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/SellCarrApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/.idea/SellCarApp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,23 +18,28 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Madalina294"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Madalina294&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Madalina294/SellCarApp.git",
-    "accountId": "96a0a3d7-a1ec-4107-b35e-04d8e2c4965e"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Madalina294/SellCarApp.git&quot;,
+    &quot;accountId&quot;: &quot;96a0a3d7-a1ec-4107-b35e-04d8e2c4965e&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="30YRkaZMq5KIi0H8i3SOI52XuDm" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -47,7 +49,8 @@
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "Spring Boot.SellCarSpringApplication.executor": "Run",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/puica/Desktop/WEB/SellCarrApp",
     "node.js.detected.package.eslint": "true",
@@ -61,8 +64,29 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\puica\Desktop\WEB\SellCarrApp\SellCar_backend" />
       <recent name="C:\Users\puica\Desktop\WEB\SellCarrApp" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="SellCarApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="SellCarApp" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <configuration name="SellCarSpringApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="SellCar_Spring" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.carApp.SellCar_Spring.SellCarSpringApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -80,7 +104,7 @@
       <option name="presentableId" value="Default" />
       <updated>1748262391342</updated>
       <workItem from="1748262393519" duration="125000" />
-      <workItem from="1753802665365" duration="635000" />
+      <workItem from="1753802665365" duration="3110000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -90,7 +114,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753802962047</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="initial commit">
+      <option name="closed" value="true" />
+      <created>1753803499022</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1753803499022</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
