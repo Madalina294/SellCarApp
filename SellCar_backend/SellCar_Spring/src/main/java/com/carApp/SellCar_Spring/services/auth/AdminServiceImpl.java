@@ -14,7 +14,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 
 
-public class AdminServiceImpl  {
+public class AdminServiceImpl  implements AuthService{
 
     private final UserRepository userRepository;
 
@@ -33,5 +33,10 @@ public class AdminServiceImpl  {
         else{
             System.out.println("Admin already exists!");
         }
+    }
+
+    @Override
+    public boolean hasUserWithEmail(String email){
+        return userRepository.findFirstByEmail(email).isPresent();
     }
 }
