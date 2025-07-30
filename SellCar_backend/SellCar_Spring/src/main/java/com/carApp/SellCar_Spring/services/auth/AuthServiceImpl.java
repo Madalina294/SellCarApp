@@ -1,5 +1,7 @@
 package com.carApp.SellCar_Spring.services.auth;
 
+import com.carApp.SellCar_Spring.dto.SignUpRequest;
+import com.carApp.SellCar_Spring.dto.UserDto;
 import com.carApp.SellCar_Spring.entities.User;
 import com.carApp.SellCar_Spring.enums.UserRole;
 import com.carApp.SellCar_Spring.repositories.UserRepository;
@@ -14,7 +16,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 
 
-public class AdminServiceImpl  implements AuthService{
+public class AuthServiceImpl implements AuthService{
 
     private final UserRepository userRepository;
 
@@ -38,5 +40,15 @@ public class AdminServiceImpl  implements AuthService{
     @Override
     public boolean hasUserWithEmail(String email){
         return userRepository.findFirstByEmail(email).isPresent();
+    }
+
+    @Override
+    public UserDto signUp(SignUpRequest signUpRequest) {
+        User user = new User();
+        user.setName(signUpRequest.getName());
+        user.setEmail(signUpRequest.getEmail());
+        user.setPassword(new BCryptPasswordEncoder().encode(signUpRequest.getPassword()));
+        user.setUserRole(UserRole.CUSTOMER);
+        return userRepository.save(user).getUserDto();
     }
 }

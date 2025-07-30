@@ -20,7 +20,7 @@ import java.util.function.Function;
 @Component
 public class JWTUtil {
     private Key getSigningKey(){
-        String SECRET = "12344567690783256791209437664782310846";
+        String SECRET = "1234456769078325679120943766478231084612344567690783256791209437664782310846";
         byte[] keyBytes = Decoders.BASE64.decode(SECRET);
         return Keys.hmacShaKeyFor(keyBytes);
     }
