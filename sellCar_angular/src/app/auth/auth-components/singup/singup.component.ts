@@ -7,6 +7,7 @@ import {NzInputDirective} from 'ng-zorro-antd/input';
 import {NzButtonComponent} from 'ng-zorro-antd/button';
 import {RouterLink} from '@angular/router';
 import {NgIf} from '@angular/common';
+import {AuthService} from '../../services/auth/auth.service';
 
 @Component({
   selector: 'app-singup',
@@ -30,7 +31,7 @@ export class SingupComponent {
   signupForm!: FormGroup;
   isSpinning: boolean = false;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private service: AuthService) {
     this.signupForm = this.fb.group({
       name: [null, [Validators.required]],
       email: [null, [Validators.required, Validators.email]],
@@ -70,5 +71,7 @@ export class SingupComponent {
       return;
     }
     console.log(this.signupForm.value);
+
+    this.service.signup(this.signupForm.value).subscribe((res) => {console.log(res)});
   }
 }

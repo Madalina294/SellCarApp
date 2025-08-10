@@ -6,13 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="2c53572b-25f9-4c36-bd5c-91325632fabb" name="Changes" comment="Design for Sign Up component and form validation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellCar_backend/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellCar_backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/auth/auth-components/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/auth/auth-components/login/login.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/auth/auth-components/login/login.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/auth/auth-components/login/login.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/controller/AuthController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/auth/auth-components/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/auth/auth-components/login/login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/auth/auth-components/singup/singup.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/auth/auth-components/singup/singup.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/auth/services/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/auth/services/auth/auth.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +117,7 @@
       <workItem from="1753872552612" duration="11295000" />
       <workItem from="1754832943903" duration="3914000" />
       <workItem from="1754852088211" duration="524000" />
-      <workItem from="1754852968657" duration="2540000" />
+      <workItem from="1754852968657" duration="3559000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />

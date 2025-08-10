@@ -15,6 +15,7 @@ import {NzFormControlComponent, NzFormDirective, NzFormItemComponent} from "ng-z
 import {NzInputDirective} from "ng-zorro-antd/input";
 import {NzSpinComponent} from "ng-zorro-antd/spin";
 import {RouterLink} from "@angular/router";
+import {AuthService} from '../../services/auth/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -39,7 +40,7 @@ export class LoginComponent {
   loginForm!: FormGroup;
   isSpinning: boolean = false;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private service: AuthService) {
     this.loginForm = this.fb.group({
       email: [null, [Validators.required, Validators.email]],
       password: [null, [
@@ -56,5 +57,7 @@ export class LoginComponent {
       return;
     }
     console.log(this.loginForm.value);
+
+    this.service.login(this.loginForm.value).subscribe((res) => {console.log(res)});
   }
 }
