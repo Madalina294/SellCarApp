@@ -14,8 +14,10 @@ import {NzColDirective, NzRowDirective} from "ng-zorro-antd/grid";
 import {NzFormControlComponent, NzFormDirective, NzFormItemComponent} from "ng-zorro-antd/form";
 import {NzInputDirective} from "ng-zorro-antd/input";
 import {NzSpinComponent} from "ng-zorro-antd/spin";
-import {RouterLink} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
 import {AuthService} from '../../services/auth/auth.service';
+import {NzMessageService} from 'ng-zorro-antd/message';
+import {StorageService} from '../../services/storage/storage.service';
 
 @Component({
   selector: 'app-login',
@@ -39,8 +41,17 @@ import {AuthService} from '../../services/auth/auth.service';
 export class LoginComponent {
   loginForm!: FormGroup;
   isSpinning: boolean = false;
+  private message: NzMessageService;
+  private router: Router
 
-  constructor(private fb: FormBuilder, private service: AuthService) {
+  constructor(
+    private fb: FormBuilder,
+    private service: AuthService,
+    message: NzMessageService,
+    router: Router
+  ) {
+    this.message = message;
+    this.router = router;
     this.loginForm = this.fb.group({
       email: [null, [Validators.required, Validators.email]],
       password: [null, [
@@ -56,8 +67,37 @@ export class LoginComponent {
       this.loginForm.updateValueAndValidity();
       return;
     }
-    console.log(this.loginForm.value);
+    this.isSpinning = true;
+    this.service.login(this.loginForm.value).subscribe((res): any => {
 
-    this.service.login(this.loginForm.value).subscribe((res) => {console.log(res)});
+      if(res.userId !== null){
+        const user ={
+          id: res.userId,
+          role: res.userRole
+        };
+        StorageService.saveUser(user);
+        StorageService.saveToken(res.jwt);
+        if(StorageService.isAdminLoggedIn()){
+          this.router.navigateByUrl("/admin/dashboard");
+        }
+        else if(StorageService.isCustomerLoggedIn()){
+          this.router.navigateByUrl("/customer/dashboard");
+        }
+      }
+      else{
+        this.isSpinning = false;
+        return this.message.error("Bad credentials", {nzDuration: 5000});
+      }
+      this.isSpinning = false;
+    }, (err) => {
+      this.isSpinning = false;
+      if (err && (err.status === 401 || err.status === 403)) {
+        this.message.error("Email or password is incorrect", { nzDuration: 5000 });
+      } else {
+        this.message.error("Error at authentication. Try again.", { nzDuration: 5000 });
+      }
+    });
+
+
   }
 }

@@ -1,5 +1,19 @@
 package com.carApp.SellCar_Spring.controller;
 
+import java.util.Optional;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.carApp.SellCar_Spring.dto.AuthenticationRequest;
 import com.carApp.SellCar_Spring.dto.AuthenticationResponse;
 import com.carApp.SellCar_Spring.dto.SignUpRequest;
@@ -9,16 +23,8 @@ import com.carApp.SellCar_Spring.repositories.UserRepository;
 import com.carApp.SellCar_Spring.services.auth.AuthService;
 import com.carApp.SellCar_Spring.services.jwt.UserService;
 import com.carApp.SellCar_Spring.utils.JWTUtil;
-import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.BadCredentialsException;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.web.bind.annotation.*;
 
-import java.util.Optional;
+import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequiredArgsConstructor
@@ -46,22 +52,31 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public AuthenticationResponse login(@RequestBody AuthenticationRequest authenticationRequest) {
-        try{
-            authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authenticationRequest.getEmail(),
-                    authenticationRequest.getPassword()));
-        }catch (BadCredentialsException e){
-            throw new BadCredentialsException("Invalid username or password");
+    public ResponseEntity<?> login(@RequestBody AuthenticationRequest authenticationRequest) {
+        try {
+            authenticationManager.authenticate(
+                    new UsernamePasswordAuthenticationToken(
+                            authenticationRequest.getEmail(),
+                            authenticationRequest.getPassword()
+                    )
+            );
+        } catch (BadCredentialsException e) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Bad credentials");
         }
-        final UserDetails userDetails = userService.userDetailsService().loadUserByUsername(authenticationRequest.getEmail());
+
+        final UserDetails userDetails = userService.userDetailsService()
+                .loadUserByUsername(authenticationRequest.getEmail());
         Optional<User> optionalUser = userRepository.findFirstByEmail(authenticationRequest.getEmail());
         final String token = jwtUtil.generateToken(userDetails);
-        AuthenticationResponse response = new AuthenticationResponse();
-        if(optionalUser.isPresent()) {
-            response.setJwt(token);
-            response.setUserId(optionalUser.get().getId());
-            response.setUserRole(optionalUser.get().getUserRole());
+
+        if (optionalUser.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("User not found");
         }
-        return response;
+
+        AuthenticationResponse response = new AuthenticationResponse();
+        response.setJwt(token);
+        response.setUserId(optionalUser.get().getId());
+        response.setUserRole(optionalUser.get().getUserRole());
+        return ResponseEntity.ok(response);
     }
 }

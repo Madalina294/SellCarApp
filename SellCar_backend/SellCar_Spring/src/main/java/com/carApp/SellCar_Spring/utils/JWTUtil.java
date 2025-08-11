@@ -1,32 +1,33 @@
 package com.carApp.SellCar_Spring.utils;
-
-import com.carApp.SellCar_Spring.entities.User;
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
-import io.jsonwebtoken.io.Decoders;
-import io.jsonwebtoken.security.Keys;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.stereotype.Component;
-
-import javax.crypto.spec.SecretKeySpec;
+import java.nio.charset.StandardCharsets;
 import java.security.Key;
-import java.util.Base64;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Component;
+
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.security.Keys;
+
 @Component
 public class JWTUtil {
     private Key getSigningKey(){
-        String SECRET = "1234456769078325679120943766478231084612344567690783256791209437664782310846";
-        byte[] keyBytes = Decoders.BASE64.decode(SECRET);
-        return Keys.hmacShaKeyFor(keyBytes);
+        // Cheie HMAC robustă (nu mai folosim Base64 decode pe un string care nu e Base64)
+        String SECRET = "change-this-to-a-long-random-secret-64+chars-abcdefghijklmnopqrstuvwxyz-0123456789-XYZ";
+        return Keys.hmacShaKeyFor(SECRET.getBytes(StandardCharsets.UTF_8));
     }
 
     private Claims extractAllClaims(String token){
-        return Jwts.parser().setSigningKey(getSigningKey()).parseClaimsJws(token).getBody();
+        return Jwts.parserBuilder()
+                .setSigningKey(getSigningKey())
+                .build()
+                .parseClaimsJws(token)
+                .getBody();
     }
 
     private <T> T extractClaims(String token, Function<Claims, T> claimsResolver){
@@ -53,10 +54,13 @@ public class JWTUtil {
     }
 
     private String generateToken(Map<String, Object> exctractClaims, UserDetails userDetails){
-        return Jwts.builder().setClaims(exctractClaims).setSubject(userDetails.getUsername())
+        return Jwts.builder()
+                .setClaims(exctractClaims)
+                .setSubject(userDetails.getUsername())
                 .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 *24))
-                .signWith(SignatureAlgorithm.HS256, getSigningKey()).compact();
+                .setExpiration(new Date(System.currentTimeMillis() + 1000L * 60 * 60 * 24))
+                .signWith(getSigningKey(), SignatureAlgorithm.HS256)
+                .compact();
     }
 
     public String generateToken(UserDetails userDetails){
