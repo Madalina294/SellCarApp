@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c53572b-25f9-4c36-bd5c-91325632fabb" name="Changes" comment="Saved JWT In Local Storage &amp; Role Base Navigation">
+    <list default="true" id="2c53572b-25f9-4c36-bd5c-91325632fabb" name="Changes" comment="Created a dynamic navbar for users">
+      <change afterPath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/configurations/JwtAuthenticationFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/app.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/auth/services/storage/storage.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/auth/services/storage/storage.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -118,7 +117,7 @@
       <workItem from="1754852088211" duration="524000" />
       <workItem from="1754852968657" duration="3624000" />
       <workItem from="1754904092081" duration="1227000" />
-      <workItem from="1754925154874" duration="7452000" />
+      <workItem from="1754925154874" duration="10266000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -208,7 +207,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754931342000</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Created a dynamic navbar for users">
+      <option name="closed" value="true" />
+      <created>1754939180140</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1754939180140</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,6 +243,7 @@
     <MESSAGE value="Added Sign Up and Log In api" />
     <MESSAGE value="Design for Sign Up component and form validation" />
     <MESSAGE value="Saved JWT In Local Storage &amp; Role Base Navigation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Saved JWT In Local Storage &amp; Role Base Navigation" />
+    <MESSAGE value="Created a dynamic navbar for users" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created a dynamic navbar for users" />
   </component>
 </project>

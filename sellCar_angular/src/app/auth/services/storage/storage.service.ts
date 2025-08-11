@@ -11,22 +11,30 @@ export class StorageService {
 
   constructor() { }
 
-  static saveToken(token:string): void{
+   private static isBrowser(): boolean {
+    return typeof window !== 'undefined' && typeof window.localStorage !== 'undefined';
+  }
+
+  static saveToken(token: string): void{
+    if (!this.isBrowser()) return;
     window.localStorage.removeItem(TOKEN);
     window.localStorage.setItem(TOKEN, token);
   }
 
-  static saveUser(user : any): void{
+  static saveUser(user: any): void{
+     if (!this.isBrowser()) return;
     window.localStorage.removeItem(USER);
     window.localStorage.setItem(USER, JSON.stringify(user));
   }
 
-  static getToken() : string | null{
-    return localStorage.getItem(TOKEN);
+  static getToken(): string | null{
+     if (!this.isBrowser()) return null;
+    return window.localStorage.getItem(TOKEN);
   }
 
-  static getUser() : any{
-    const rawUser = localStorage.getItem(USER);
+  static getUser(): any{
+    if (!this.isBrowser()) return null;
+    const rawUser = window.localStorage.getItem(USER);
     if (!rawUser) return null;
     try{
       return JSON.parse(rawUser);
@@ -42,12 +50,14 @@ export class StorageService {
   }
 
   static isAdminLoggedIn(): boolean{
+     if (!this.isBrowser()) return false;
     if(this.getToken() === null) return false;
     const role:string = this.getUserRole();
     return role === "ADMIN";
   }
 
   static isCustomerLoggedIn(): boolean{
+     if (!this.isBrowser()) return false;
     if(this.getToken() == null) return false;
     const role:string = this.getUserRole();
     return role === "CUSTOMER";
@@ -58,13 +68,15 @@ export class StorageService {
     else return true;
   }
 
-  static getUserId() : string{
+  static getUserId(): string{
+     if (!this.isBrowser()) return '';
     const user = this.getUser();
     if(user === null) return "";
     else return user.id;
   }
 
-  static signout() : void{
+  static signout(): void{
+    if (!this.isBrowser()) return;
       window.localStorage.removeItem(USER);
       window.localStorage.removeItem(TOKEN);
   }
