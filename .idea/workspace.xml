@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c53572b-25f9-4c36-bd5c-91325632fabb" name="Changes" comment="Design for Sign Up component and form validation">
+    <list default="true" id="2c53572b-25f9-4c36-bd5c-91325632fabb" name="Changes" comment="Saved JWT In Local Storage &amp; Role Base Navigation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/configurations/WebSecurityConfigurations.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/configurations/WebSecurityConfigurations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/enums/UserRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/enums/UserRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/services/auth/AuthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/services/auth/AuthServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/utils/JWTUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/utils/JWTUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/auth/auth-components/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/auth/auth-components/login/login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/app.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/auth/services/storage/storage.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/auth/services/storage/storage.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sellCar_angular/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +118,7 @@
       <workItem from="1754852088211" duration="524000" />
       <workItem from="1754852968657" duration="3624000" />
       <workItem from="1754904092081" duration="1227000" />
-      <workItem from="1754925154874" duration="5348000" />
+      <workItem from="1754925154874" duration="7452000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -205,7 +200,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754852605188</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Saved JWT In Local Storage &amp; Role Base Navigation">
+      <option name="closed" value="true" />
+      <created>1754931342000</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1754931342000</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,6 +235,7 @@
     <MESSAGE value="Added Web Security Configurations" />
     <MESSAGE value="Added Sign Up and Log In api" />
     <MESSAGE value="Design for Sign Up component and form validation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Design for Sign Up component and form validation" />
+    <MESSAGE value="Saved JWT In Local Storage &amp; Role Base Navigation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Saved JWT In Local Storage &amp; Role Base Navigation" />
   </component>
 </project>
