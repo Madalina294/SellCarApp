@@ -1,9 +1,11 @@
 package com.carApp.SellCar_Spring.dto;
 
-import lombok.Data;
 import org.springframework.web.multipart.MultipartFile;
 
+import lombok.Data;
+
 import java.util.Date;
+
 
 @Data
 
@@ -23,5 +25,6 @@ public class CarDto {
     private MultipartFile image;
 
     private byte[] returnedImage;
+    private Long userId;
 
 }
