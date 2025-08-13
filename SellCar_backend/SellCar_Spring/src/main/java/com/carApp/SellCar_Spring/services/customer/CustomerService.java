@@ -1,5 +1,6 @@
 package com.carApp.SellCar_Spring.services.customer;
 
+import com.carApp.SellCar_Spring.dto.BidDto;
 import com.carApp.SellCar_Spring.dto.CarDto;
 import com.carApp.SellCar_Spring.dto.SearchCarDto;
 
@@ -20,4 +21,6 @@ public interface CustomerService {
     List<CarDto> searchCar(SearchCarDto searchCarDto);
 
     List<CarDto> getCarsByCustomerId(Long customerId);
+
+    boolean bidACar(BidDto bidDto);
 }

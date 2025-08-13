@@ -19,6 +19,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
@@ -47,8 +48,9 @@ public class Car {
     @Column(columnDefinition = "text")
     private String description;
 
+
     @JdbcTypeCode(SqlTypes.BINARY)
-    @Column(name = "image", columnDefinition = "bytea")
+    @Column(name = "image")
     private byte[] image;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

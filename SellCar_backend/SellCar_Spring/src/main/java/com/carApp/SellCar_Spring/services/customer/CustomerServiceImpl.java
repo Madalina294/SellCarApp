@@ -1,23 +1,24 @@
 package com.carApp.SellCar_Spring.services.customer;
 
+import com.carApp.SellCar_Spring.dto.BidDto;
+import com.carApp.SellCar_Spring.dto.CarDto;
+import com.carApp.SellCar_Spring.dto.SearchCarDto;
+import com.carApp.SellCar_Spring.entities.Bid;
+import com.carApp.SellCar_Spring.entities.Car;
+import com.carApp.SellCar_Spring.entities.User;
+import com.carApp.SellCar_Spring.enums.BidStatus;
+import com.carApp.SellCar_Spring.repositories.BidRepository;
+import com.carApp.SellCar_Spring.repositories.CarRepository;
+import com.carApp.SellCar_Spring.repositories.UserRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.ExampleMatcher;
+import org.springframework.stereotype.Service;
+
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.ExampleMatcher;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-import com.carApp.SellCar_Spring.dto.CarDto;
-import com.carApp.SellCar_Spring.dto.SearchCarDto;
-import com.carApp.SellCar_Spring.entities.Car;
-import com.carApp.SellCar_Spring.entities.User;
-import com.carApp.SellCar_Spring.repositories.CarRepository;
-import com.carApp.SellCar_Spring.repositories.UserRepository;
-
-import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
@@ -26,6 +27,7 @@ public class CustomerServiceImpl implements CustomerService {
     private final UserRepository userRepository;
 
     private final CarRepository carRepository;
+    private final BidRepository bidRepository;
 
     @Override
     public boolean createCar(CarDto carDto) throws IOException {
@@ -50,13 +52,11 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    @Transactional(readOnly = true)
     public List<CarDto> getAllCars() {
         return carRepository.findAll().stream().map(Car::getCarDto).collect(Collectors.toList());
     }
 
     @Override
-    @Transactional(readOnly = true)
     public CarDto getCarById(Long id) {
         Optional<Car> optionalCar = carRepository.findById(id);
         return optionalCar.map(Car::getCarDto).orElse(null);
@@ -90,7 +90,6 @@ public class CustomerServiceImpl implements CustomerService {
      }
 
     @Override
-    @Transactional(readOnly = true)
     public List<CarDto> searchCar(SearchCarDto searchCarDto) {
         Car car = new Car();
         car.setBrand(searchCarDto.getBrand());
@@ -108,8 +107,23 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    @Transactional(readOnly = true)
     public List<CarDto> getCarsByCustomerId(Long customerId) {
         return carRepository.findAllByUserId(customerId).stream().map(Car::getCarDto).collect(Collectors.toList());
+    }
+
+    @Override
+    public boolean bidACar(BidDto bidDto) {
+        Optional<Car> optionalCar = carRepository.findById(bidDto.getCarId());
+        Optional<User> optionalUser = userRepository.findById(bidDto.getUserId());
+        if (optionalCar.isPresent() && optionalUser.isPresent()) {
+            Bid bid = new Bid();
+            bid.setCar(optionalCar.get());
+            bid.setUser(optionalUser.get());
+            bid.setPrice(bidDto.getPrice());
+            bid.setBidStatus(BidStatus.PENDING);
+            bidRepository.save(bid);
+            return true;
+        }
+        return false;
     }
 }

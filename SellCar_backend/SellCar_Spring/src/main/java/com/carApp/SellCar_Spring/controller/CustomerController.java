@@ -1,5 +1,6 @@
 package com.carApp.SellCar_Spring.controller;
 
+import com.carApp.SellCar_Spring.dto.BidDto;
 import com.carApp.SellCar_Spring.dto.CarDto;
 import com.carApp.SellCar_Spring.dto.SearchCarDto;
 import com.carApp.SellCar_Spring.services.customer.CustomerService;
@@ -58,5 +59,12 @@ public class CustomerController {
     @GetMapping("/my-cars/{id}")
     public ResponseEntity<List<CarDto>> getCarsByCustomerId(@PathVariable Long id) {
         return ResponseEntity.ok(customerService.getCarsByCustomerId(id));
+    }
+
+    @PostMapping("/car/bid")
+    public ResponseEntity<?> bidACar(@RequestBody BidDto bidDto) {
+        boolean succes = customerService.bidACar(bidDto);
+        if (succes) return ResponseEntity.status(HttpStatus.CREATED).build();
+        else return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
     }
 }
