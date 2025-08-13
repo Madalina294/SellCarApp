@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c53572b-25f9-4c36-bd5c-91325632fabb" name="Changes" comment="Fetch Cars API for Admin &amp; Customer">
+    <list default="true" id="2c53572b-25f9-4c36-bd5c-91325632fabb" name="Changes" comment="Added GET Car by Id API for Admin &amp; Customer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/controller/AdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/controller/CustomerController.java" afterDir="false" />
@@ -124,7 +124,7 @@
       <workItem from="1754925154874" duration="13555000" />
       <workItem from="1754990530525" duration="14784000" />
       <workItem from="1755030473407" duration="1931000" />
-      <workItem from="1755080155759" duration="1234000" />
+      <workItem from="1755080155759" duration="3102000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -262,7 +262,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755032285165</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Added GET Car by Id API for Admin &amp; Customer">
+      <option name="closed" value="true" />
+      <created>1755082397887</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1755082397888</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,6 +304,7 @@
     <MESSAGE value="Improved Jwt Authentication Filter" />
     <MESSAGE value="Added POST car API by Customer" />
     <MESSAGE value="Fetch Cars API for Admin &amp; Customer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fetch Cars API for Admin &amp; Customer" />
+    <MESSAGE value="Added GET Car by Id API for Admin &amp; Customer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added GET Car by Id API for Admin &amp; Customer" />
   </component>
 </project>

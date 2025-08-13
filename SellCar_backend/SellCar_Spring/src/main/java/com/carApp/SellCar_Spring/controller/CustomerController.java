@@ -34,4 +34,10 @@ public class CustomerController {
     public ResponseEntity<CarDto> getCarById(@PathVariable Long id) {
         return ResponseEntity.ok(customerService.getCarById(id));
     }
+
+    @DeleteMapping("/car/{id}")
+    public ResponseEntity<Void> deleteCarById(@PathVariable Long id) {
+        customerService.deleteCar(id);
+        return ResponseEntity.ok(null);
+    }
 }
