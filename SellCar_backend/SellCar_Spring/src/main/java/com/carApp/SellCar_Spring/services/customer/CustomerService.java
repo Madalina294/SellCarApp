@@ -1,6 +1,7 @@
 package com.carApp.SellCar_Spring.services.customer;
 
 import com.carApp.SellCar_Spring.dto.CarDto;
+import com.carApp.SellCar_Spring.dto.SearchCarDto;
 
 import java.io.IOException;
 import java.util.List;
@@ -15,4 +16,6 @@ public interface CustomerService {
     void deleteCar(Long id);
 
     boolean updateCar(Long id, CarDto carDto) throws IOException;
+
+    List<CarDto> searchCar(SearchCarDto searchCarDto);
 }

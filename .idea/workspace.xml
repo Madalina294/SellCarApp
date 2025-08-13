@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c53572b-25f9-4c36-bd5c-91325632fabb" name="Changes" comment="Added DELETE Car by Id API for Admin &amp; Customer">
+    <list default="true" id="2c53572b-25f9-4c36-bd5c-91325632fabb" name="Changes" comment="Added Update Car API for Customer">
+      <change afterPath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/dto/SearchCarDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/controller/AdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/services/admin/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/services/admin/AdminService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/services/admin/AdminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/services/admin/AdminServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/services/customer/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/services/customer/CustomerService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/services/customer/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/services/customer/CustomerServiceImpl.java" afterDir="false" />
     </list>
@@ -121,7 +125,7 @@
       <workItem from="1754925154874" duration="13555000" />
       <workItem from="1754990530525" duration="14784000" />
       <workItem from="1755030473407" duration="1931000" />
-      <workItem from="1755080155759" duration="5082000" />
+      <workItem from="1755080155759" duration="7644000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -275,7 +279,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755083393854</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Added Update Car API for Customer">
+      <option name="closed" value="true" />
+      <created>1755085552049</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1755085552049</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -311,6 +323,7 @@
     <MESSAGE value="Fetch Cars API for Admin &amp; Customer" />
     <MESSAGE value="Added GET Car by Id API for Admin &amp; Customer" />
     <MESSAGE value="Added DELETE Car by Id API for Admin &amp; Customer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added DELETE Car by Id API for Admin &amp; Customer" />
+    <MESSAGE value="Added Update Car API for Customer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Update Car API for Customer" />
   </component>
 </project>

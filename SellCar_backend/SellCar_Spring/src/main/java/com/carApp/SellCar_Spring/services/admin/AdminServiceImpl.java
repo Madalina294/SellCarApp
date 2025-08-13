@@ -1,9 +1,12 @@
 package com.carApp.SellCar_Spring.services.admin;
 
 import com.carApp.SellCar_Spring.dto.CarDto;
+import com.carApp.SellCar_Spring.dto.SearchCarDto;
 import com.carApp.SellCar_Spring.entities.Car;
 import com.carApp.SellCar_Spring.repositories.CarRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -30,5 +33,22 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public void deleteCar(Long id) {
         carRepository.deleteById(id);
+    }
+
+    @Override
+    public List<CarDto> searchCar(SearchCarDto searchCarDto) {
+        Car car = new Car();
+        car.setBrand(searchCarDto.getBrand());
+        car.setType(searchCarDto.getType());
+        car.setColor(searchCarDto.getColor());
+        car.setTransmission(searchCarDto.getTransmission());
+        ExampleMatcher exampleMatcher = ExampleMatcher.matching()
+                .withMatcher("brand", ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase())
+                .withMatcher("type", ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase())
+                .withMatcher("color", ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase())
+                .withMatcher("transmission", ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase());
+        Example<Car> example = Example.of(car, exampleMatcher);
+        List<Car> cars = carRepository.findAll(example);
+        return cars.stream().map(Car::getCarDto).collect(Collectors.toList());
     }
 }

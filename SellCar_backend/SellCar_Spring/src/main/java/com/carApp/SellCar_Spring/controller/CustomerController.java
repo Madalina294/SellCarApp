@@ -1,6 +1,7 @@
 package com.carApp.SellCar_Spring.controller;
 
 import com.carApp.SellCar_Spring.dto.CarDto;
+import com.carApp.SellCar_Spring.dto.SearchCarDto;
 import com.carApp.SellCar_Spring.services.customer.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -47,5 +48,10 @@ public class CustomerController {
         if(succes) return ResponseEntity.status(HttpStatus.OK).build();
         else return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
 
+    }
+
+    @PostMapping("/car/search")
+    public ResponseEntity<List<CarDto>> searchCar(@RequestBody SearchCarDto searchCarDto) throws IOException {
+        return ResponseEntity.ok(customerService.searchCar(searchCarDto));
     }
 }
