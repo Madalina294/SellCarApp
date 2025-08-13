@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface AdminService {
     List<CarDto> getAllCars();
-
+    CarDto getCarById(Long id);
 }

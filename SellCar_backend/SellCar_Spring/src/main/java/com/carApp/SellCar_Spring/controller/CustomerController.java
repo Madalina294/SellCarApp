@@ -29,4 +29,9 @@ public class CustomerController {
     public ResponseEntity<List<CarDto>> getAllCars() {
         return ResponseEntity.ok(customerService.getAllCars());
     }
+
+    @GetMapping("/car/{id}")
+    public ResponseEntity<CarDto> getCarById(@PathVariable Long id) {
+        return ResponseEntity.ok(customerService.getCarById(id));
+    }
 }
