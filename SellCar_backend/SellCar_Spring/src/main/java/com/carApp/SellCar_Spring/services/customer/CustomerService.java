@@ -18,4 +18,6 @@ public interface CustomerService {
     boolean updateCar(Long id, CarDto carDto) throws IOException;
 
     List<CarDto> searchCar(SearchCarDto searchCarDto);
+
+    List<CarDto> getCarsByCustomerId(Long customerId);
 }

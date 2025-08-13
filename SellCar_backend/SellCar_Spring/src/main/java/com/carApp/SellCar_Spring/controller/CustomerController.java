@@ -54,4 +54,9 @@ public class CustomerController {
     public ResponseEntity<List<CarDto>> searchCar(@RequestBody SearchCarDto searchCarDto) throws IOException {
         return ResponseEntity.ok(customerService.searchCar(searchCarDto));
     }
+
+    @GetMapping("/my-cars/{id}")
+    public ResponseEntity<List<CarDto>> getCarsByCustomerId(@PathVariable Long id) {
+        return ResponseEntity.ok(customerService.getCarsByCustomerId(id));
+    }
 }
