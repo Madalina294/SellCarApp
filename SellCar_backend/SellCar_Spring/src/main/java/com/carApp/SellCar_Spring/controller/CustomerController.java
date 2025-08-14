@@ -79,4 +79,11 @@ public class CustomerController {
         return ResponseEntity.ok(customerService.getBidsByCarId(carId));
 
     }
+
+    @PostMapping("/car/bid/{bidId}/{status}")
+    public ResponseEntity<?> updateBidStatus(@PathVariable Long bidId, @PathVariable String status) {
+        boolean success = customerService.changeBidStatus(bidId, status);
+        if(success) return ResponseEntity.ok().build();
+        else return ResponseEntity.notFound().build();
+    }
 }

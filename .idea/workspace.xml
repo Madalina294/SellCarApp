@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c53572b-25f9-4c36-bd5c-91325632fabb" name="Changes" comment="Added Get All Bids for Admin api">
+    <list default="true" id="2c53572b-25f9-4c36-bd5c-91325632fabb" name="Changes" comment="Added Get All Bids by Car Id for Customer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/controller/AdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/controller/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/repositories/BidRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/repositories/BidRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/services/admin/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/services/admin/AdminService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/services/admin/AdminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/services/admin/AdminServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/services/customer/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/services/customer/CustomerService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/services/customer/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/services/customer/CustomerServiceImpl.java" afterDir="false" />
     </list>
@@ -123,7 +125,7 @@
       <workItem from="1754990530525" duration="14784000" />
       <workItem from="1755030473407" duration="1931000" />
       <workItem from="1755080155759" duration="15453000" />
-      <workItem from="1755185235507" duration="4745000" />
+      <workItem from="1755185235507" duration="6455000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -325,7 +327,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755189887566</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Added Get All Bids by Car Id for Customer">
+      <option name="closed" value="true" />
+      <created>1755190422030</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1755190422030</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -367,6 +377,7 @@
     <MESSAGE value="Added Bid for mapping selling offers" />
     <MESSAGE value="Added Get Bids by User Id api" />
     <MESSAGE value="Added Get All Bids for Admin api" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Get All Bids for Admin api" />
+    <MESSAGE value="Added Get All Bids by Car Id for Customer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Get All Bids by Car Id for Customer" />
   </component>
 </project>

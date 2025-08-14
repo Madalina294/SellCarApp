@@ -17,6 +17,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -135,5 +136,23 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public List<BidDto> getBidsByCarId(Long carId) {
         return bidRepository.findAllByCarId(carId).stream().map(Bid::getBidDto).collect(Collectors.toList());
+    }
+
+    @Override
+    public boolean changeBidStatus(Long bidId, String status) {
+        Optional<Bid> bid = bidRepository.findById(bidId);
+        if (bid.isPresent()) {
+            Bid existingBid = bid.get();
+            if(existingBid.getCar().isSold()) return false;
+            if(Objects.equals(status, "Approved")) {
+                existingBid.setBidStatus(BidStatus.APPROVED);
+            }
+            else {
+                existingBid.setBidStatus(BidStatus.REJECTED);
+            }
+            bidRepository.save(existingBid);
+            return true;
+        }
+        return false;
     }
 }

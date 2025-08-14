@@ -14,4 +14,6 @@ public interface AdminService {
     List<CarDto> searchCar(SearchCarDto searchCarDto);
 
     List<BidDto> getAllBids();
+
+    boolean changeBidStatus(Long bidId, String status);
 }
