@@ -126,4 +126,9 @@ public class CustomerServiceImpl implements CustomerService {
         }
         return false;
     }
+
+    @Override
+    public List<BidDto> getBidsByUserId(Long userId) {
+        return bidRepository.findAllByUserId(userId).stream().map(Bid::getBidDto).collect(Collectors.toList());
+    }
 }

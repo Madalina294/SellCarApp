@@ -10,5 +10,9 @@ public class BidDto {
     private BidStatus bidStatus;
     private Long userId;
     private Long carId;
-
+    private String userName;
+    private String carName;
+    private String carBrand;
+    private String email;
+    private String sellerName;
 }

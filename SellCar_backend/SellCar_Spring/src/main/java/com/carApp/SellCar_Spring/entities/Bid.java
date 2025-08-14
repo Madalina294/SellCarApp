@@ -1,5 +1,6 @@
 package com.carApp.SellCar_Spring.entities;
 
+import com.carApp.SellCar_Spring.dto.BidDto;
 import com.carApp.SellCar_Spring.enums.BidStatus;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -31,4 +32,18 @@ public class Bid {
     private Car car;
 
     private BidStatus bidStatus;
+
+    public BidDto getBidDto(){
+        BidDto bidDto = new BidDto();
+        bidDto.setId(id);
+        bidDto.setPrice(price);
+        bidDto.setCarId(car.getId());
+        bidDto.setCarName(car.getName());
+        bidDto.setCarBrand(car.getBrand());
+        bidDto.setBidStatus(bidStatus);
+        bidDto.setUserName(user.getName());
+        bidDto.setEmail(user.getEmail());
+        bidDto.setSellerName(car.getUser().getName());
+        return bidDto;
+    }
 }

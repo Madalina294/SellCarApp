@@ -23,7 +23,7 @@ public class CustomerController {
     @PostMapping("/car")
     public ResponseEntity<?> addCar(@ModelAttribute CarDto carDto) throws IOException {
         boolean succes = customerService.createCar(carDto);
-        if(succes) return ResponseEntity.status(HttpStatus.CREATED).build();
+        if (succes) return ResponseEntity.status(HttpStatus.CREATED).build();
         else return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
     }
 
@@ -46,7 +46,7 @@ public class CustomerController {
     @PutMapping("/car/{id}")
     public ResponseEntity<?> updateCarById(@PathVariable Long id, @ModelAttribute CarDto carDto) throws IOException {
         boolean succes = customerService.updateCar(id, carDto);
-        if(succes) return ResponseEntity.status(HttpStatus.OK).build();
+        if (succes) return ResponseEntity.status(HttpStatus.OK).build();
         else return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
 
     }
@@ -66,5 +66,11 @@ public class CustomerController {
         boolean succes = customerService.bidACar(bidDto);
         if (succes) return ResponseEntity.status(HttpStatus.CREATED).build();
         else return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+    }
+
+    @GetMapping("/car/bids/{id}")
+    public ResponseEntity<List<BidDto>> getBidsByUserId(@PathVariable Long id) {
+        return ResponseEntity.ok(customerService.getBidsByUserId(id));
+
     }
 }
