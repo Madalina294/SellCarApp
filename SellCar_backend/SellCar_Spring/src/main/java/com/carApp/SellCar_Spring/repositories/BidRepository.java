@@ -8,4 +8,6 @@ import java.util.Optional;
 
 public interface BidRepository extends JpaRepository<Bid, Long> {
     List<Bid> findAllByUserId(Long userId);
+
+    List<Bid> findAllByCarId(Long carId);
 }
