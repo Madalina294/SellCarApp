@@ -1,8 +1,11 @@
 package com.carApp.SellCar_Spring.services.admin;
 
+import com.carApp.SellCar_Spring.dto.BidDto;
 import com.carApp.SellCar_Spring.dto.CarDto;
 import com.carApp.SellCar_Spring.dto.SearchCarDto;
+import com.carApp.SellCar_Spring.entities.Bid;
 import com.carApp.SellCar_Spring.entities.Car;
+import com.carApp.SellCar_Spring.repositories.BidRepository;
 import com.carApp.SellCar_Spring.repositories.CarRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Example;
@@ -18,6 +21,7 @@ import java.util.stream.Collectors;
 public class AdminServiceImpl implements AdminService {
 
     private final CarRepository carRepository;
+    private final BidRepository bidRepository;
 
     @Override
     public List<CarDto> getAllCars() {
@@ -50,5 +54,10 @@ public class AdminServiceImpl implements AdminService {
         Example<Car> example = Example.of(car, exampleMatcher);
         List<Car> cars = carRepository.findAll(example);
         return cars.stream().map(Car::getCarDto).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<BidDto> getAllBids() {
+        return bidRepository.findAll().stream().map(Bid::getBidDto).collect(Collectors.toList());
     }
 }

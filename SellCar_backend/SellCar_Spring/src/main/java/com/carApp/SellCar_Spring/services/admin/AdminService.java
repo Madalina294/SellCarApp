@@ -1,5 +1,6 @@
 package com.carApp.SellCar_Spring.services.admin;
 
+import com.carApp.SellCar_Spring.dto.BidDto;
 import com.carApp.SellCar_Spring.dto.CarDto;
 import com.carApp.SellCar_Spring.dto.SearchCarDto;
 
@@ -11,4 +12,6 @@ public interface AdminService {
     void deleteCar(Long id);
 
     List<CarDto> searchCar(SearchCarDto searchCarDto);
+
+    List<BidDto> getAllBids();
 }

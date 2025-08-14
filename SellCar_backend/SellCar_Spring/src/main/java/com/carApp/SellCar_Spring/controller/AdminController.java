@@ -1,5 +1,6 @@
 package com.carApp.SellCar_Spring.controller;
 
+import com.carApp.SellCar_Spring.dto.BidDto;
 import com.carApp.SellCar_Spring.dto.CarDto;
 import com.carApp.SellCar_Spring.dto.SearchCarDto;
 import com.carApp.SellCar_Spring.services.admin.AdminService;
@@ -38,5 +39,10 @@ public class AdminController {
     @PostMapping("/car/search")
     public ResponseEntity<List<CarDto>> searchCar(@RequestBody SearchCarDto searchCarDto) throws IOException {
         return ResponseEntity.ok(adminService.searchCar(searchCarDto));
+    }
+
+    @GetMapping("/car/bids")
+    public ResponseEntity<List<BidDto>> getAllBids(){
+        return ResponseEntity.ok(adminService.getAllBids());
     }
 }
