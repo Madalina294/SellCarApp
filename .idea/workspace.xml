@@ -8,6 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/components/my-cars/my-cars.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/components/my-cars/my-cars.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/components/my-cars/my-cars.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/components/my-cars/my-cars.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/customer-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/customer-routing.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/services/customer.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/services/customer.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -126,7 +127,7 @@
       <workItem from="1755513667173" duration="3445000" />
       <workItem from="1755524808702" duration="1678000" />
       <workItem from="1755530465954" duration="2639000" />
-      <workItem from="1755542967496" duration="2796000" />
+      <workItem from="1755542967496" duration="2804000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />

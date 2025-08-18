@@ -4,6 +4,7 @@ import {NzColDirective, NzRowDirective} from "ng-zorro-antd/grid";
 import {CustomerService} from '../../services/customer.service';
 import {NzButtonComponent} from 'ng-zorro-antd/button';
 import {NzMessageService} from 'ng-zorro-antd/message';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-my-cars',
@@ -12,7 +13,8 @@ import {NzMessageService} from 'ng-zorro-antd/message';
     NgForOf,
     NzColDirective,
     NzRowDirective,
-    NzButtonComponent
+    NzButtonComponent,
+    RouterLink
   ],
   templateUrl: './my-cars.component.html',
   styleUrl: './my-cars.component.scss'
