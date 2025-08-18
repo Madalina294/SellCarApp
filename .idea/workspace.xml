@@ -7,15 +7,7 @@
     <list default="true" id="2c53572b-25f9-4c36-bd5c-91325632fabb" name="Changes" comment="Added Get Analytics api for Customer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/modules/admin/admin-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/modules/admin/admin-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/modules/admin/components/admin-dashboard/admin-dashboard.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/modules/admin/components/admin-dashboard/admin-dashboard.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/modules/admin/components/admin-dashboard/admin-dashboard.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/modules/admin/components/admin-dashboard/admin-dashboard.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/modules/admin/components/admin-dashboard/admin-dashboard.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/modules/admin/components/admin-dashboard/admin-dashboard.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/modules/admin/services/admin.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/modules/admin/services/admin.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/components/customer-dashboard/customer-dashboard.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/components/customer-dashboard/customer-dashboard.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/components/customer-dashboard/customer-dashboard.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/components/customer-dashboard/customer-dashboard.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/components/customer-dashboard/customer-dashboard.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/components/customer-dashboard/customer-dashboard.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/components/post-car/post-car.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/components/post-car/post-car.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/customer-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/customer-routing.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/services/customer.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/services/customer.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -134,7 +126,7 @@
       <workItem from="1755513667173" duration="3445000" />
       <workItem from="1755524808702" duration="1678000" />
       <workItem from="1755530465954" duration="2639000" />
-      <workItem from="1755542967496" duration="1878000" />
+      <workItem from="1755542967496" duration="2182000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
