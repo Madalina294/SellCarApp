@@ -23,6 +23,12 @@ export class CustomerService {
     });
   }
 
+  deleteCar(id: number): Observable<any>{
+    return this.http.delete(BASE_URL + `api/customer/car/${id}`, {
+      headers: this.createAuthorizationHeader()
+    });
+  }
+
   getMyCars(): Observable<any>{
     return this.http.get(BASE_URL + `api/customer/my-cars/${StorageService.getUserId()}`, {
       headers: this.createAuthorizationHeader()

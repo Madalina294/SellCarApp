@@ -25,6 +25,9 @@
           <b> {{ car.type }}</b> - Year: <b> {{ car.year | date : "yyyy" }}</b>
         </h5>
         <hr />
+        <div style="float: right;">
+          <button nzSize="small" nz-button nzType="primary" nzDanger (click)="deleteCar(car.id)">Delete</button>
+        </div>
       </div>
     </div>
   </div>
