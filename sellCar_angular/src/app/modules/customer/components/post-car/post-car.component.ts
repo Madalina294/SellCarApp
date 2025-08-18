@@ -12,6 +12,7 @@ import {NzDatePickerComponent} from 'ng-zorro-antd/date-picker';
 import {NzButtonComponent} from 'ng-zorro-antd/button';
 import { CommonModule } from '@angular/common';
 import {StorageService} from '../../../../auth/services/storage/storage.service';
+import {Observable} from 'rxjs';
 
 
 @Component({
@@ -69,22 +70,22 @@ export class PostCarComponent implements OnInit {
       this.message.error("Please fill in all required fields", {nzDuration: 3000});
       return;
     }
-    
+
     // Validate image
     if (!this.selectedFile) {
       this.message.error("Please select an image", {nzDuration: 3000});
       return;
     }
-    
+
     this.isSpinning = true;
     console.log(this.postCarForm.value);
     console.log(this.selectedFile);
-    
+
     const formData: FormData = new FormData();
-    
+
     // Add image (required)
     formData.append("image", this.selectedFile);
-    
+
     // Add all form fields
     formData.append("brand", this.postCarForm.get('brand')?.value);
     formData.append("name", this.postCarForm.get('name')?.value);
@@ -114,6 +115,8 @@ export class PostCarComponent implements OnInit {
       this.message.error("Something went wrong. Please check all fields and try again.", {nzDuration: 5000});
     });
   }
+
+
 
   onFileSelected(event:any){
     this.selectedFile = event.target.files[0];
