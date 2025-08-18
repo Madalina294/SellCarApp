@@ -1,5 +1,6 @@
 package com.carApp.SellCar_Spring.services.customer;
 
+import com.carApp.SellCar_Spring.dto.AnalyticsDto;
 import com.carApp.SellCar_Spring.dto.BidDto;
 import com.carApp.SellCar_Spring.dto.CarDto;
 import com.carApp.SellCar_Spring.dto.SearchCarDto;
@@ -154,5 +155,13 @@ public class CustomerServiceImpl implements CustomerService {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public AnalyticsDto getAnalyticsDto(Long userId) {
+        AnalyticsDto analyticsDto = new AnalyticsDto();
+        analyticsDto.setTotalCars(carRepository.countByUserId(userId));
+        analyticsDto.setSoldCars(carRepository.countByUserIdAndSoldTrue(userId));
+        return analyticsDto;
     }
 }

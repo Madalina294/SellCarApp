@@ -1,5 +1,6 @@
 package com.carApp.SellCar_Spring.services.customer;
 
+import com.carApp.SellCar_Spring.dto.AnalyticsDto;
 import com.carApp.SellCar_Spring.dto.BidDto;
 import com.carApp.SellCar_Spring.dto.CarDto;
 import com.carApp.SellCar_Spring.dto.SearchCarDto;
@@ -29,4 +30,6 @@ public interface CustomerService {
     List<BidDto> getBidsByCarId(Long carId);
 
     boolean changeBidStatus(Long bidId, String status);
+
+    AnalyticsDto getAnalyticsDto(Long userId);
 }

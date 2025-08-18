@@ -1,5 +1,6 @@
 package com.carApp.SellCar_Spring.controller;
 
+import com.carApp.SellCar_Spring.dto.AnalyticsDto;
 import com.carApp.SellCar_Spring.dto.BidDto;
 import com.carApp.SellCar_Spring.dto.CarDto;
 import com.carApp.SellCar_Spring.dto.SearchCarDto;
@@ -85,5 +86,12 @@ public class CustomerController {
         boolean success = customerService.changeBidStatus(bidId, status);
         if(success) return ResponseEntity.ok().build();
         else return ResponseEntity.notFound().build();
+    }
+
+
+    @GetMapping("/car/analytics/{userId}")
+    public ResponseEntity<?> getAnalyticsByUserId(@PathVariable Long userId) {
+        return ResponseEntity.ok(customerService.getAnalyticsDto(userId));
+
     }
 }
