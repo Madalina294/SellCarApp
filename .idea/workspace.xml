@@ -6,8 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="2c53572b-25f9-4c36-bd5c-91325632fabb" name="Changes" comment="Added Get Analytics api for Customer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/customer-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/customer-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/components/post-car/post-car.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/components/post-car/post-car.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/components/post-car/post-car.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/components/post-car/post-car.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/services/customer.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/services/customer.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,6 +125,7 @@
       <workItem from="1755185235507" duration="7161000" />
       <workItem from="1755513667173" duration="3445000" />
       <workItem from="1755524808702" duration="1678000" />
+      <workItem from="1755530465954" duration="2517000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
