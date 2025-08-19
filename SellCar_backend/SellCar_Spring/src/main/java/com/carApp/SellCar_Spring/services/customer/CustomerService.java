@@ -1,12 +1,12 @@
 package com.carApp.SellCar_Spring.services.customer;
 
+import java.io.IOException;
+import java.util.List;
+
 import com.carApp.SellCar_Spring.dto.AnalyticsDto;
 import com.carApp.SellCar_Spring.dto.BidDto;
 import com.carApp.SellCar_Spring.dto.CarDto;
 import com.carApp.SellCar_Spring.dto.SearchCarDto;
-
-import java.io.IOException;
-import java.util.List;
 
 public interface CustomerService {
     boolean createCar(CarDto carDto) throws IOException;
@@ -29,7 +29,9 @@ public interface CustomerService {
 
     List<BidDto> getBidsByCarId(Long carId);
 
-    boolean changeBidStatus(Long bidId, String status);
+    List<BidDto> getBidsOnMyCars(Long ownerId);
+
+    boolean changeBidStatus(Long bidId, String status, Long currentUserId);
 
     AnalyticsDto getAnalyticsDto(Long userId);
 }

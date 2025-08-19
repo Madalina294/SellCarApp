@@ -1,5 +1,15 @@
 package com.carApp.SellCar_Spring.services.customer;
 
+import java.io.IOException;
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.ExampleMatcher;
+import org.springframework.stereotype.Service;
+
 import com.carApp.SellCar_Spring.dto.AnalyticsDto;
 import com.carApp.SellCar_Spring.dto.BidDto;
 import com.carApp.SellCar_Spring.dto.CarDto;
@@ -11,16 +21,8 @@ import com.carApp.SellCar_Spring.enums.BidStatus;
 import com.carApp.SellCar_Spring.repositories.BidRepository;
 import com.carApp.SellCar_Spring.repositories.CarRepository;
 import com.carApp.SellCar_Spring.repositories.UserRepository;
-import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.ExampleMatcher;
-import org.springframework.stereotype.Service;
 
-import java.io.IOException;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.stream.Collectors;
+import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
@@ -140,21 +142,43 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public boolean changeBidStatus(Long bidId, String status) {
-        Optional<Bid> bid = bidRepository.findById(bidId);
-        if (bid.isPresent()) {
-            Bid existingBid = bid.get();
-            if(existingBid.getCar().isSold()) return false;
-            if(Objects.equals(status, "Approved")) {
-                existingBid.setBidStatus(BidStatus.APPROVED);
+    public List<BidDto> getBidsOnMyCars(Long ownerId) {
+        return bidRepository.findAllBidsOnCarsByOwnerId(ownerId).stream().map(Bid::getBidDto).collect(Collectors.toList());
+    }
+
+    @Override
+    public boolean changeBidStatus(Long bidId, String status, Long currentUserId) {
+        try {
+            Optional<Bid> bid = bidRepository.findById(bidId);
+            if (bid.isPresent()) {
+                Bid existingBid = bid.get();
+                
+                // Check if the current user is the owner of the car
+                if (!Objects.equals(existingBid.getCar().getUser().getId(), currentUserId)) {
+                    return false; // User is not authorized to change this bid status
+                }
+                
+                // Check if car is already sold
+                if(existingBid.getCar().isSold()) return false;
+                
+                // Update bid status
+                if(Objects.equals(status, "Approved")) {
+                    existingBid.setBidStatus(BidStatus.APPROVED);
+                } else if(Objects.equals(status, "Rejected")) {
+                    existingBid.setBidStatus(BidStatus.REJECTED);
+                } else {
+                    return false; // Invalid status
+                }
+                
+                bidRepository.save(existingBid);
+                return true;
             }
-            else {
-                existingBid.setBidStatus(BidStatus.REJECTED);
-            }
-            bidRepository.save(existingBid);
-            return true;
+            return false;
+        } catch (Exception e) {
+            // Log the exception in a real application
+            System.err.println("Error changing bid status: " + e.getMessage());
+            return false;
         }
-        return false;
     }
 
     @Override

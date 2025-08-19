@@ -1,29 +1,43 @@
-<nz-spin [nzSpinning]="issSpinning" [nzSize]="'large'" nzTip="Working...">
+<nz-spin [nzSpinning]="isSpinning" [nzSize]="'large'" nzTip="Working...">
   <div class="table-container">
-    <h2 style="margin-bottom: 20px; color: #003973; text-align: center">
-      My Deals
-    </h2>
-    <nz-table
-      #basicTable
-      [nzData]="bids"
-      [nzPageSize]="20"
-      nzSize="middle"
+    <div
+      style="
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      "
     >
+      <h2 style="color: #003973; margin: 0">
+        {{ viewMode === "my-bids" ? "My Bids" : "Bids on My Cars" }}
+      </h2>
+      <nz-switch
+        [(ngModel)]="isReceived"
+        (ngModelChange)="toggleView()"
+        [nzCheckedChildren]="'Bids Received'"
+        [nzUnCheckedChildren]="'My Bids'"
+      >
+      </nz-switch>
+    </div>
+    <nz-table #basicTable [nzData]="bids" [nzPageSize]="20" nzSize="middle">
       <thead>
         <tr>
           <th nzWidth="20%">Car Name</th>
           <th nzWidth="20%">Car Brand</th>
-          <th nzWidth="20%">Seller Name</th>
+          <th nzWidth="20%" *ngIf="viewMode === 'my-bids'">Seller Name</th>
+          <th nzWidth="20%" *ngIf="viewMode === 'received'">Bidder Name</th>
           <th nzWidth="15%">Price</th>
           <th nzWidth="15%">Status</th>
+          <th nzWidth="15%" *ngIf="viewMode === 'received'">Action</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let booking of basicTable.data; trackBy: trackByFn">
           <td>{{ booking.carName }}</td>
           <td>{{ booking.carBrand }}</td>
-          <td>{{ booking.sellerName }}</td>
-          <td>${{ booking.price}}</td>
+          <td *ngIf="viewMode === 'my-bids'">{{ booking.sellerName }}</td>
+          <td *ngIf="viewMode === 'received'">{{ booking.userName }}</td>
+          <td>${{ booking.price }}</td>
           <td>
             <strong
               [ngClass]="{
@@ -34,6 +48,29 @@
             >
               {{ booking.bidStatus }}
             </strong>
+          </td>
+          <td *ngIf="viewMode === 'received'">
+            <span *ngIf="booking.bidStatus === 'PENDING'">
+              <button
+                style="margin-left: 10px"
+                nzSize="small"
+                nz-button
+                nzType="primary"
+                (click)="changeBookingStatus(booking.id, 'Approved')"
+              >
+                Approve
+              </button>
+              <button
+                style="margin-left: 10px"
+                nzSize="small"
+                nz-button
+                nzType="primary"
+                (click)="changeBookingStatus(booking.id, 'Rejected')"
+                nzDanger
+              >
+                Reject
+              </button>
+            </span>
           </td>
         </tr>
       </tbody>

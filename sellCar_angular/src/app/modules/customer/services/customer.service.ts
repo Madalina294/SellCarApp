@@ -66,4 +66,16 @@ export class CustomerService {
       headers: this.createAuthorizationHeader()
     });
   }
+
+  updateBidStatus(bidId: number, status: string): Observable<any>{
+    return this.http.put(BASE_URL + `api/customer/car/bid/${bidId}/${status}`, {}, {
+      headers: this.createAuthorizationHeader()
+    });
+  }
+
+  getBidsOnMyCars(): Observable<any>{
+    return this.http.get(BASE_URL + `api/customer/bids-on-my-cars/${StorageService.getUserId()}`, {
+      headers: this.createAuthorizationHeader()
+    });
+  }
 }

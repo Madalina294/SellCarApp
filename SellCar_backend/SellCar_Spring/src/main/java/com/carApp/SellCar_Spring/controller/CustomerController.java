@@ -1,17 +1,32 @@
 package com.carApp.SellCar_Spring.controller;
 
-import com.carApp.SellCar_Spring.dto.AnalyticsDto;
+import java.io.IOException;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.carApp.SellCar_Spring.dto.BidDto;
 import com.carApp.SellCar_Spring.dto.CarDto;
 import com.carApp.SellCar_Spring.dto.SearchCarDto;
+import com.carApp.SellCar_Spring.entities.User;
+import com.carApp.SellCar_Spring.repositories.UserRepository;
 import com.carApp.SellCar_Spring.services.customer.CustomerService;
-import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
-import java.util.List;
+import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("/api/customer")
@@ -20,6 +35,7 @@ import java.util.List;
 public class CustomerController {
 
     private final CustomerService customerService;
+    private final UserRepository userRepository;
 
     @PostMapping("/car")
     public ResponseEntity<?> addCar(@ModelAttribute CarDto carDto) throws IOException {
@@ -81,11 +97,29 @@ public class CustomerController {
 
     }
 
-    @PostMapping("/car/bid/{bidId}/{status}")
+    @GetMapping("/bids-on-my-cars/{ownerId}")
+    public ResponseEntity<List<BidDto>> getBidsOnMyCars(@PathVariable Long ownerId) {
+        return ResponseEntity.ok(customerService.getBidsOnMyCars(ownerId));
+    }
+
+    @PutMapping("/car/bid/{bidId}/{status}")
     public ResponseEntity<?> updateBidStatus(@PathVariable Long bidId, @PathVariable String status) {
-        boolean success = customerService.changeBidStatus(bidId, status);
-        if(success) return ResponseEntity.ok().build();
-        else return ResponseEntity.notFound().build();
+        try {
+            // Get current user from security context
+            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+            String userEmail = authentication.getName();
+            Optional<User> currentUser = userRepository.findFirstByEmail(userEmail);
+            
+            if (currentUser.isEmpty()) {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+            }
+            
+            boolean success = customerService.changeBidStatus(bidId, status, currentUser.get().getId());
+            if(success) return ResponseEntity.ok().build();
+            else return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
     }
 
 
