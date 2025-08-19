@@ -1,0 +1,42 @@
+<nz-spin [nzSpinning]="issSpinning" [nzSize]="'large'" nzTip="Working...">
+  <div class="table-container">
+    <h2 style="margin-bottom: 20px; color: #003973; text-align: center">
+      My Deals
+    </h2>
+    <nz-table
+      #basicTable
+      [nzData]="bids"
+      [nzPageSize]="20"
+      nzSize="middle"
+    >
+      <thead>
+        <tr>
+          <th nzWidth="20%">Car Name</th>
+          <th nzWidth="20%">Car Brand</th>
+          <th nzWidth="20%">Seller Name</th>
+          <th nzWidth="15%">Price</th>
+          <th nzWidth="15%">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let booking of basicTable.data; trackBy: trackByFn">
+          <td>{{ booking.carName }}</td>
+          <td>{{ booking.carBrand }}</td>
+          <td>{{ booking.sellerName }}</td>
+          <td>${{ booking.price}}</td>
+          <td>
+            <strong
+              [ngClass]="{
+                'status-approved': booking.bidStatus === 'APPROVED',
+                'status-rejected': booking.bidStatus === 'REJECTED',
+                'status-pending': booking.bidStatus === 'PENDING'
+              }"
+            >
+              {{ booking.bidStatus }}
+            </strong>
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+</nz-spin>

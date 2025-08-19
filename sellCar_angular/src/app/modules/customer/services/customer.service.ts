@@ -60,4 +60,10 @@ export class CustomerService {
       headers: this.createAuthorizationHeader()
     });
   }
+
+  getMyBids(): Observable<any>{
+    return this.http.get(BASE_URL + `api/customer/car/bids/${StorageService.getUserId()}`, {
+      headers: this.createAuthorizationHeader()
+    });
+  }
 }
