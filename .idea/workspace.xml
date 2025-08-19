@@ -4,14 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c53572b-25f9-4c36-bd5c-91325632fabb" name="Changes" comment="Added Get Analytics api for Customer">
+    <list default="true" id="2c53572b-25f9-4c36-bd5c-91325632fabb" name="Changes" comment="Finished Manage Received Deals for Customer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/controller/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/repositories/BidRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/repositories/BidRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/services/customer/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/services/customer/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/dto/AnalyticsDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/dto/AnalyticsDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/repositories/CarRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/repositories/CarRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/services/customer/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellCar_backend/SellCar_Spring/src/main/java/com/carApp/SellCar_Spring/services/customer/CustomerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/components/view-my-bids/view-my-bids.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/components/view-my-bids/view-my-bids.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/components/view-my-bids/view-my-bids.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/components/view-my-bids/view-my-bids.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/components/customer-dashboard/customer-dashboard.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/components/customer-dashboard/customer-dashboard.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/components/customer-dashboard/customer-dashboard.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/components/customer-dashboard/customer-dashboard.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/components/my-cars/my-cars.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/components/my-cars/my-cars.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/components/my-cars/my-cars.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/components/my-cars/my-cars.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/services/customer.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/services/customer.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -131,7 +132,7 @@
       <workItem from="1755524808702" duration="1678000" />
       <workItem from="1755530465954" duration="2639000" />
       <workItem from="1755542967496" duration="2806000" />
-      <workItem from="1755593664902" duration="7218000" />
+      <workItem from="1755593664902" duration="9716000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -357,7 +358,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755515594852</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Finished Manage Received Deals for Customer">
+      <option name="closed" value="true" />
+      <created>1755621462099</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1755621462101</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -375,7 +384,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added routing to the frontend" />
     <MESSAGE value="Added JWT Util, userService, UserRepository, and user entity" />
     <MESSAGE value="Added admin and customer modules in frontend" />
     <MESSAGE value="Created admin account" />
@@ -400,6 +408,7 @@
     <MESSAGE value="Added Get All Bids by Car Id for Customer" />
     <MESSAGE value="Added Update bid status api for Customer &amp; Admin" />
     <MESSAGE value="Added Get Analytics api for Customer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Get Analytics api for Customer" />
+    <MESSAGE value="Finished Manage Received Deals for Customer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished Manage Received Deals for Customer" />
   </component>
 </project>

@@ -1,6 +1,28 @@
 <div style="background-color: #f8f8f8; min-height: 91vh">
   <div style="margin-top: 10px"></div>
 
+  <nz-card
+    *ngIf="analytics"
+    style="width: 80%; text-align: center; margin: auto"
+  >
+    <div nz-card-grid [ngStyle]="gridStyle">
+      <h3>Total Cars in App</h3>
+      <h1>{{ analytics.totalCars }}</h1>
+    </div>
+    <div nz-card-grid [ngStyle]="gridStyle">
+      <h3>Total Sold in App</h3>
+      <h1>{{ analytics.soldCars }}</h1>
+    </div>
+    <div nz-card-grid [ngStyle]="gridStyle">
+      <h3>My Posted Cars</h3>
+      <h1>{{ analytics.myCars ? analytics.myCars : 0 }}</h1>
+    </div>
+    <div nz-card-grid [ngStyle]="gridStyle">
+      <h3>My Sold Cars</h3>
+      <h1>{{ analytics.mySoldCars ? analytics.mySoldCars : 0 }}</h1>
+    </div>
+  </nz-card>
+
   <div style="margin-top: 10px" class="child" *ngFor="let car of cars">
     <div nz-row>
       <div nz-col nzSpan="8">
@@ -25,6 +47,27 @@
           <b> {{ car.type }}</b> - Year: <b> {{ car.year | date : "yyyy" }}</b>
         </h5>
         <hr />
+        <div style="float: right">
+          <button
+            nz-button
+            nzSize="small"
+            *ngIf="!car.sold"
+            nzType="primary"
+            routerLink="/customer/car/{{ car.id }}/book"
+          >
+            Book
+          </button>
+          <button
+            nz-button
+            nzSize="small"
+            *ngIf="car.sold"
+            nzDanger
+            style="margin-left: 5px"
+            nzType="primary"
+          >
+            <span nz-icon nzType="check-circle" nzTheme="outline"></span>Sold
+          </button>
+        </div>
       </div>
     </div>
   </div>

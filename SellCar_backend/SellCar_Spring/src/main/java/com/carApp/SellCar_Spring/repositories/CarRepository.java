@@ -17,4 +17,6 @@ public interface CarRepository extends JpaRepository<Car, Long> {
     Long countByUserId(Long userId);
 
     Long countByUserIdAndSoldTrue(Long userId);
+
+    Long countBySoldTrue();
 }

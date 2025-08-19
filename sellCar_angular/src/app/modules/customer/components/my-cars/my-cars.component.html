@@ -28,6 +28,8 @@
         <div style="float: right;">
           <button nzSize="small" nz-button nzType="primary" routerLink="/customer/car/edit/{{car.id}}">Update</button>
           <button nzSize="small" nz-button nzType="primary" nzDanger (click)="deleteCar(car.id)"style="margin-left: 10px;">Delete</button>
+          <button nz-button nzSize="small" *ngIf="car.sold" nzDanger style="margin-left: 5px;"
+                  nzType="primary"><span nz-icon nzType="check-circle" nzTheme="outline"></span>Sold</button>
         </div>
       </div>
     </div>

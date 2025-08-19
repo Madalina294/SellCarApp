@@ -152,6 +152,7 @@ public class CustomerServiceImpl implements CustomerService {
             Optional<Bid> bid = bidRepository.findById(bidId);
             if (bid.isPresent()) {
                 Bid existingBid = bid.get();
+                Car car = existingBid.getCar();
                 
                 // Check if the current user is the owner of the car
                 if (!Objects.equals(existingBid.getCar().getUser().getId(), currentUserId)) {
@@ -164,6 +165,7 @@ public class CustomerServiceImpl implements CustomerService {
                 // Update bid status
                 if(Objects.equals(status, "Approved")) {
                     existingBid.setBidStatus(BidStatus.APPROVED);
+                    car.setSold(true);
                 } else if(Objects.equals(status, "Rejected")) {
                     existingBid.setBidStatus(BidStatus.REJECTED);
                 } else {
@@ -184,8 +186,12 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public AnalyticsDto getAnalyticsDto(Long userId) {
         AnalyticsDto analyticsDto = new AnalyticsDto();
-        analyticsDto.setTotalCars(carRepository.countByUserId(userId));
-        analyticsDto.setSoldCars(carRepository.countByUserIdAndSoldTrue(userId));
+        // Global statistics (all users)
+        analyticsDto.setTotalCars(carRepository.count());
+        analyticsDto.setSoldCars(carRepository.countBySoldTrue());
+        // Personal statistics (current user)
+        analyticsDto.setMyCars(carRepository.countByUserId(userId));
+        analyticsDto.setMySoldCars(carRepository.countByUserIdAndSoldTrue(userId));
         return analyticsDto;
     }
 }

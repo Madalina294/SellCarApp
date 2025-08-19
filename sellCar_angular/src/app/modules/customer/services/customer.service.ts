@@ -78,4 +78,10 @@ export class CustomerService {
       headers: this.createAuthorizationHeader()
     });
   }
+
+  getAnalytics(): Observable<any>{
+    return this.http.get(BASE_URL + `api/customer/car/analytics/${StorageService.getUserId()}`, {
+      headers: this.createAuthorizationHeader()
+    });
+  }
 }

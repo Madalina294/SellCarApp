@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import {DatePipe, NgForOf} from "@angular/common";
+import {DatePipe, NgForOf, NgIf} from "@angular/common";
 import {NzColDirective, NzRowDirective} from "ng-zorro-antd/grid";
 import {CustomerService} from '../../services/customer.service';
 import {NzButtonComponent} from 'ng-zorro-antd/button';
 import {NzMessageService} from 'ng-zorro-antd/message';
 import {RouterLink} from '@angular/router';
+import {NzIconDirective} from 'ng-zorro-antd/icon';
 
 @Component({
   selector: 'app-my-cars',
@@ -14,7 +15,9 @@ import {RouterLink} from '@angular/router';
     NzColDirective,
     NzRowDirective,
     NzButtonComponent,
-    RouterLink
+    RouterLink,
+    NgIf,
+    NzIconDirective
   ],
   templateUrl: './my-cars.component.html',
   styleUrl: './my-cars.component.scss'
