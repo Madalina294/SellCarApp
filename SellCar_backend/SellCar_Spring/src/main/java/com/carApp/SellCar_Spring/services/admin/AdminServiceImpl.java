@@ -1,5 +1,14 @@
 package com.carApp.SellCar_Spring.services.admin;
 
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.ExampleMatcher;
+import org.springframework.stereotype.Service;
+
 import com.carApp.SellCar_Spring.dto.BidDto;
 import com.carApp.SellCar_Spring.dto.CarDto;
 import com.carApp.SellCar_Spring.dto.SearchCarDto;
@@ -8,15 +17,8 @@ import com.carApp.SellCar_Spring.entities.Car;
 import com.carApp.SellCar_Spring.enums.BidStatus;
 import com.carApp.SellCar_Spring.repositories.BidRepository;
 import com.carApp.SellCar_Spring.repositories.CarRepository;
-import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.ExampleMatcher;
-import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.stream.Collectors;
+import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
@@ -49,6 +51,10 @@ public class AdminServiceImpl implements AdminService {
         car.setColor(searchCarDto.getColor());
         car.setTransmission(searchCarDto.getTransmission());
         ExampleMatcher exampleMatcher = ExampleMatcher.matching()
+                .withIgnoreNullValues() // Ignore null values
+                .withStringMatcher(ExampleMatcher.StringMatcher.CONTAINING) // Default to contains
+                .withIgnoreCase() // Ignore case for all string matches
+                .withIgnorePaths("sold") // IMPORTANT: Ignore the sold field to include both sold and unsold cars
                 .withMatcher("brand", ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase())
                 .withMatcher("type", ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase())
                 .withMatcher("color", ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase())
