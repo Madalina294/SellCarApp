@@ -95,18 +95,40 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public List<CarDto> searchCar(SearchCarDto searchCarDto) {
+        System.out.println("=== SEARCH DEBUG ===");
+        System.out.println("Search criteria received:");
+        System.out.println("Brand: " + searchCarDto.getBrand());
+        System.out.println("Type: " + searchCarDto.getType());
+        System.out.println("Color: " + searchCarDto.getColor());
+        System.out.println("Transmission: " + searchCarDto.getTransmission());
+        
         Car car = new Car();
         car.setBrand(searchCarDto.getBrand());
         car.setType(searchCarDto.getType());
         car.setColor(searchCarDto.getColor());
         car.setTransmission(searchCarDto.getTransmission());
+        
         ExampleMatcher exampleMatcher = ExampleMatcher.matching()
+                .withIgnoreNullValues() // Ignore null values
+                .withStringMatcher(ExampleMatcher.StringMatcher.CONTAINING) // Default to contains
+                .withIgnoreCase() // Ignore case for all string matches
+                .withIgnorePaths("sold") // IMPORTANT: Ignore the sold field to include both sold and unsold cars
                 .withMatcher("brand", ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase())
                 .withMatcher("type", ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase())
                 .withMatcher("color", ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase())
                 .withMatcher("transmission", ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase());
+        
         Example<Car> example = Example.of(car, exampleMatcher);
         List<Car> cars = carRepository.findAll(example);
+        
+        System.out.println("Found " + cars.size() + " cars matching criteria");
+        cars.forEach(foundCar -> {
+            System.out.println("Found car: " + foundCar.getBrand() + " " + foundCar.getName() + 
+                " - Type: " + foundCar.getType() + " - Color: " + foundCar.getColor() + 
+                " - Transmission: " + foundCar.getTransmission() + " - SOLD: " + foundCar.isSold());
+        });
+        System.out.println("==================");
+        
         return cars.stream().map(Car::getCarDto).collect(Collectors.toList());
     }
 
