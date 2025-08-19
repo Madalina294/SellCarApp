@@ -35,6 +35,12 @@ export class CustomerService {
     });
   }
 
+  updateCar(id: number, carDto: any): Observable<any>{
+    return this.http.put(BASE_URL + `api/customer/car/${id}`, carDto,  {
+      headers: this.createAuthorizationHeader()
+    });
+  }
+
   getMyCars(): Observable<any>{
     return this.http.get(BASE_URL + `api/customer/my-cars/${StorageService.getUserId()}`, {
       headers: this.createAuthorizationHeader()
