@@ -6,9 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="2c53572b-25f9-4c36-bd5c-91325632fabb" name="Changes" comment="Added Get Analytics api for Customer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/components/update-car/update-car.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/components/update-car/update-car.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/components/update-car/update-car.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/components/update-car/update-car.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/auth/auth-components/singup/singup.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/auth/auth-components/singup/singup.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/components/post-car/post-car.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/components/post-car/post-car.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/components/update-car/update-car.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/components/update-car/update-car.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/customer-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/customer-routing.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/services/customer.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/sellCar_angular/src/app/modules/customer/services/customer.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -128,7 +129,7 @@
       <workItem from="1755524808702" duration="1678000" />
       <workItem from="1755530465954" duration="2639000" />
       <workItem from="1755542967496" duration="2806000" />
-      <workItem from="1755593664902" duration="1366000" />
+      <workItem from="1755593664902" duration="3011000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />

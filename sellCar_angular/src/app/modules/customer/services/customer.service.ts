@@ -54,4 +54,10 @@ export class CustomerService {
       'Bearer '+ StorageService.getToken()
     );
   }
+
+  bidACar(formData: any):Observable<any>{
+    return  this.http.post(BASE_URL + "api/customer/car/bid", formData, {
+      headers: this.createAuthorizationHeader()
+    });
+  }
 }

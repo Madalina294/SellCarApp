@@ -5,7 +5,7 @@ import {NzFormControlComponent, NzFormDirective, NzFormItemComponent} from 'ng-z
 import {NzColDirective, NzRowDirective} from 'ng-zorro-antd/grid';
 import {NzInputDirective} from 'ng-zorro-antd/input';
 import {NzButtonComponent} from 'ng-zorro-antd/button';
-import {RouterLink} from '@angular/router';
+import {Router, RouterLink} from '@angular/router';
 import {NgIf} from '@angular/common';
 import {AuthService} from '../../services/auth/auth.service';
 
@@ -31,7 +31,7 @@ export class SingupComponent {
   signupForm!: FormGroup;
   isSpinning: boolean = false;
 
-  constructor(private fb: FormBuilder, private service: AuthService) {
+  constructor(private fb: FormBuilder, private service: AuthService, private router: Router) {
     this.signupForm = this.fb.group({
       name: [null, [Validators.required]],
       email: [null, [Validators.required, Validators.email]],
@@ -72,6 +72,9 @@ export class SingupComponent {
     }
     console.log(this.signupForm.value);
 
-    this.service.signup(this.signupForm.value).subscribe((res) => {console.log(res)});
+    this.service.signup(this.signupForm.value).subscribe((res) => {
+      console.log(res);
+      this.router.navigateByUrl("/login");
+    });
   }
 }

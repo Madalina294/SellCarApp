@@ -1,0 +1,53 @@
+<div style="background-color: #f8f8f8; min-height: 91vh">
+  <div style="margin-top: 10px"></div>
+
+  <div style="margin-top: 10px" class="child" *ngIf="car">
+    <div nz-row>
+      <div nz-col nzSpan="8">
+        <img
+          class="profile"
+          style="height: 130px; width: 200px; border-radius: 10px"
+          [src]="'data:image/jpeg;base64,' + car.returnedImage"
+          alt="profile"
+        />
+      </div>
+
+      <div nz-col nzSpan="16">
+        <h2 style="cursor: pointer; color: #108ee9">
+          {{ car.brand }} - {{ car.name }}
+        </h2>
+        <p>{{ car.description }}</p>
+
+        <hr />
+        <h5>
+          Price: <b> ${{ car.price }}</b> - Color: <b> {{ car.color }}</b> -
+          Transmission: <b> {{ car.transmission }}</b> - Type:
+          <b> {{ car.type }}</b> - Year: <b> {{ car.year | date : "yyyy" }}</b>
+        </h5>
+        <hr />
+      </div>
+    </div>
+  </div>
+  <nz-spin [nzSpinning]="isSpinning" [nzSize]="'large'" nzTip="Working..." style="margin-top: 50px;">
+    <div class="child" style="text-align: center;">
+      <form [formGroup]="bidForm">
+        <div>
+
+          <div>
+            <nz-form-item nzSpan="24">
+              <nz-form-label nzFor="From Date" style="margin-right: 10px">Your deal </nz-form-label>
+              <nz-form-control>
+                <nz-input-number style="width: 100%;" formControlName="price" [nzMin]="1" [nzStep]="1"></nz-input-number>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+
+          <div>
+            <button class="filterBtn" nz-button nzType="primary" (click)="bidACar(bidForm.value)">Deal on Car</button>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </nz-spin>
+</div>

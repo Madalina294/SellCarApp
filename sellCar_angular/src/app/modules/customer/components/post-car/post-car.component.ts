@@ -36,7 +36,7 @@ import {Observable} from 'rxjs';
 })
 export class PostCarComponent implements OnInit {
 
-  listOfBrands = ["BMW", "AUDI", "FERRARI", "TESLA", "VOLVO", "TOYOTA", "HONDA", "FORD", "NISSAN", "HYUNDAI", "LEXUS", "KIA", "HAVAL"];
+  listOfBrands = ["BMW", "AUDI", "MERCEDES", "FERRARI", "TESLA", "VOLVO", "TOYOTA", "HONDA", "FORD", "NISSAN", "HYUNDAI", "LEXUS", "KIA", "HAVAL"];
   listOfTypes = ["Petrol", "Hybrid", "Diesel","Electric", "CNG"];
   listOfColor = ["Red", "White", "Silver", "Blue", "Black", "Orange", "Grey"];
   listOfTransmission = ["Manual", "Automatic" ];
