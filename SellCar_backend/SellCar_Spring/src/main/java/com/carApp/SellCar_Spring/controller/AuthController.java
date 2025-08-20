@@ -77,6 +77,7 @@ public class AuthController {
         response.setJwt(token);
         response.setUserId(optionalUser.get().getId());
         response.setUserRole(optionalUser.get().getUserRole());
+        response.setUserName(optionalUser.get().getName());
         return ResponseEntity.ok(response);
     }
 }

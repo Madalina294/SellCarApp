@@ -21,14 +21,17 @@ export class AppComponent {
 
   isAdminLoggedIn: boolean = false;
   isCustomerLoggedIn: boolean = false;
+  userName: string | null = null;
 
   ngOnInit(){
     this.isAdminLoggedIn = StorageService.isAdminLoggedIn();
     this.isCustomerLoggedIn = StorageService.isCustomerLoggedIn();
+    this.userName = StorageService.getUserName();
     this.router.events.subscribe(event => {
       if(event.constructor.name === "NavigationEnd"){
         this.isAdminLoggedIn = StorageService.isAdminLoggedIn();
         this.isCustomerLoggedIn = StorageService.isCustomerLoggedIn();
+        this.userName = StorageService.getUserName();
       }
     })
   }

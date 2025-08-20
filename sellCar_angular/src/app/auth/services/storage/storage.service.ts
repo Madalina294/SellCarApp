@@ -75,6 +75,19 @@ export class StorageService {
     else return user.id;
   }
 
+  static getUserName(): string{
+    if (!this.isBrowser()) return '';
+    
+    const user = this.getUser();
+    if(user === null) return "";
+    
+    // Return user name if available
+    if(user.name) return user.name;
+    if(user.username) return user.username;
+    
+    return "User"; // Fallback
+  }
+
   static signout(): void{
     if (!this.isBrowser()) return;
       window.localStorage.removeItem(USER);
